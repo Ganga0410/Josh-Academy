@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Josh Academy - Police, Army & Vanrakshak Bharti Training</title>
+    <title>Josh Academy - Police / Army / Vanrakshak Bharti</title>
     <style>
         * {
             margin: 0;
@@ -21,114 +21,76 @@
         header {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            padding: 2rem 0;
+            padding: 1rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .header-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            text-align: center;
-        }
-
-        .header-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .header-content .tagline {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-        }
-
-        .header-content .services {
-            font-size: 1rem;
-            background: rgba(255,255,255,0.1);
-            padding: 10px 20px;
-            border-radius: 5px;
-            display: inline-block;
-        }
-
-        /* Navigation */
-        nav {
-            background: #1a2942;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        nav ul {
-            list-style: none;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
         }
 
-        nav ul li {
-            margin: 0 15px;
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            padding: 5px 10px;
-            display: block;
-        }
-
-        nav ul li a:hover {
-            color: #ffd700;
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 0.2rem;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23234567" width="1200" height="400"/></svg>');
+            background: linear-gradient(rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231e3c72" width="1200" height="600"/><circle cx="200" cy="100" r="80" fill="%232a5298" opacity="0.3"/><circle cx="800" cy="400" r="120" fill="%232a5298" opacity="0.3"/><circle cx="1000" cy="200" r="60" fill="%232a5298" opacity="0.3"/></svg>');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 4rem 20px;
             text-align: center;
+            padding: 4rem 20px;
         }
 
         .hero h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
             max-width: 800px;
-            margin: 0 auto 2rem;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-button {
+            display: inline-block;
             background: #ff6b35;
             color: white;
-            padding: 15px 40px;
+            padding: 12px 30px;
             text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
+            border-radius: 5px;
             font-weight: bold;
-            display: inline-block;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
         .cta-button:hover {
-            background: #ff5722;
+            background: #ff8555;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255,107,53,0.6);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.3);
         }
 
         /* Container */
@@ -138,219 +100,200 @@
             padding: 0 20px;
         }
 
-        /* Sections */
-        section {
-            padding: 4rem 20px;
+        /* Services Section */
+        .services {
+            padding: 4rem 0;
+            background: #f4f4f4;
         }
 
-        section h2 {
+        .section-title {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-bottom: 3rem;
             color: #1e3c72;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 1rem;
         }
 
-        section h2::after {
+        .section-title::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
-            height: 4px;
+            height: 3px;
             background: #ff6b35;
-            border-radius: 2px;
         }
 
-        /* Coaches Grid */
-        .coaches-grid {
+        .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
         }
 
-        .coach-card {
+        .service-card {
             background: white;
-            border-radius: 10px;
             padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
-            transition: transform 0.3s;
-            border-top: 4px solid #1e3c72;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .coach-card:hover {
+        .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
-        .coach-card h3 {
-            color: #1e3c72;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .coach-card .phone {
-            color: #ff6b35;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 0.5rem;
-        }
-
-        .coach-card .phone:hover {
-            color: #ff5722;
-        }
-
-        /* Address Section */
-        .address-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 3rem;
-            border-radius: 15px;
-            max-width: 800px;
-            margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .address-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .address-box p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            text-align: center;
-        }
-
-        /* Features Section */
-        .features {
-            background: #f8f9fa;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        .feature-item .icon {
+        .service-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
 
-        .feature-item h3 {
+        .service-card h3 {
             color: #1e3c72;
             margin-bottom: 1rem;
         }
 
-        /* Social Media Section */
-        .social-section {
-            background: #1e3c72;
-            color: white;
+        /* Previous Exams Section */
+        .exams {
+            padding: 4rem 0;
         }
 
-        .social-section h2 {
-            color: white;
+        .exam-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
-        .social-section h2::after {
-            background: #ff6b35;
+        .exam-item {
+            background: white;
+            border-left: 4px solid #ff6b35;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .exam-item:hover {
+            transform: translateX(5px);
+        }
+
+        .exam-item h4 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Coaches Section */
+        .coaches {
+            padding: 4rem 0;
+            background: #f4f4f4;
+        }
+
+        .coach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .coach-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .coach-card h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .coach-card a {
+            color: #ff6b35;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .coach-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .info-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item strong {
+            color: #1e3c72;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
 
         .social-links {
             display: flex;
-            justify-content: center;
-            gap: 3rem;
+            gap: 1rem;
+            margin-top: 1.5rem;
             flex-wrap: wrap;
         }
 
         .social-link {
-            text-align: center;
-        }
-
-        .social-link a {
-            display: inline-block;
-            background: white;
-            color: #1e3c72;
-            padding: 20px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(255,255,255,0.2);
-        }
-
-        .social-link a:hover {
-            background: #ff6b35;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #1e3c72;
             color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255,255,255,0.3);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
         }
 
-        .social-link p {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            opacity: 0.9;
+        .social-link:hover {
+            background: #2a5298;
         }
 
         /* Footer */
         footer {
-            background: #1a2942;
+            background: #1e3c72;
             color: white;
             text-align: center;
-            padding: 2rem 20px;
-        }
-
-        footer p {
-            margin-bottom: 0.5rem;
+            padding: 2rem 0;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .header-content h1 {
-                font-size: 1.8rem;
-            }
-
             .hero h2 {
                 font-size: 1.8rem;
             }
 
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
-            nav ul {
-                flex-direction: column;
-                align-items: center;
+            .header-content {
+                text-align: center;
+                justify-content: center;
             }
 
-            nav ul li {
-                margin: 5px 0;
-            }
-
-            .coaches-grid {
+            .service-grid,
+            .coach-grid {
                 grid-template-columns: 1fr;
-            }
-
-            section h2 {
-                font-size: 1.8rem;
             }
         }
     </style>
@@ -359,122 +302,139 @@
     <!-- Header -->
     <header>
         <div class="header-content">
-            <h1>🎖️ Josh Academy 🎖️</h1>
-            <p class="tagline">Your Path to Success in Government Services</p>
-            <div class="services">
-                <strong>Maharashtra Police • Army • Vanrakshak Bharti</strong>
+            <div class="logo">
+                <h1>🎖️ Josh Academy</h1>
+                <p>Police / Army / Vanrakshak Bharti</p>
             </div>
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#coaches">Our Coaches</a></li>
-            <li><a href="#features">Why Choose Us</a></li>
-            <li><a href="#location">Location</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h2>Join Maharashtra's Premier Police & Army Training Academy</h2>
-        <p>Expert coaching for Maharashtra Police Bharti, Army Recruitment, and Vanrakshak Bharti with proven success track record</p>
-        <a href="#contact" class="cta-button">Enroll Now</a>
+    <section class="hero">
+        <div class="container">
+            <h2>Your Path to Success in Police & Army Recruitment</h2>
+            <p>Expert coaching for Maharashtra Police, Army, and Vanrakshak Bharti with comprehensive test preparation and previous exam dumps</p>
+            <a href="#contact" class="cta-button">Join Us Today</a>
+        </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
+    <!-- Services Section -->
+    <section class="services">
         <div class="container">
-            <h2>Why Choose Josh Academy?</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="icon">📚</div>
-                    <h3>Comprehensive Study Material</h3>
-                    <p>Previous year question papers and dumps test for Maharashtra Police</p>
+            <h2 class="section-title">Our Training Programs</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">👮</div>
+                    <h3>Maharashtra Police Bharti</h3>
+                    <p>Comprehensive preparation with previous year question papers and mock tests</p>
                 </div>
-                <div class="feature-item">
-                    <div class="icon">👨‍🏫</div>
-                    <h3>Expert Faculty</h3>
-                    <p>Experienced coaches dedicated to your success</p>
+                <div class="service-card">
+                    <div class="service-icon">🪖</div>
+                    <h3>Army Recruitment</h3>
+                    <p>Physical and written exam preparation for army recruitment</p>
                 </div>
-                <div class="feature-item">
-                    <div class="icon">🏋️</div>
-                    <h3>Physical Training</h3>
-                    <p>Complete physical fitness preparation for all tests</p>
+                <div class="service-card">
+                    <div class="service-icon">🌲</div>
+                    <h3>Vanrakshak Bharti</h3>
+                    <p>Specialized training for forest department recruitment</p>
                 </div>
-                <div class="feature-item">
-                    <div class="icon">✅</div>
-                    <h3>Proven Results</h3>
-                    <p>Track record of successful candidates in government services</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Previous Exams Section -->
+    <section class="exams">
+        <div class="container">
+            <h2 class="section-title">Previous Police Bharti Exam Dumps</h2>
+            <div class="exam-list">
+                <div class="exam-item">
+                    <h4>📝 Maharashtra Police Constable 2024</h4>
+                    <p>Complete question bank with answers and explanations</p>
+                </div>
+                <div class="exam-item">
+                    <h4>📝 Police Bharti 2023</h4>
+                    <p>Previous year papers with detailed solutions</p>
+                </div>
+                <div class="exam-item">
+                    <h4>📝 Vanrakshak Recruitment 2023</h4>
+                    <p>Comprehensive study material and test series</p>
+                </div>
+                <div class="exam-item">
+                    <h4>📝 Police Bharti Mock Tests</h4>
+                    <p>Regular practice tests based on latest pattern</p>
+                </div>
+                <div class="exam-item">
+                    <h4>📝 Physical Test Preparation</h4>
+                    <p>Complete physical fitness training program</p>
+                </div>
+                <div class="exam-item">
+                    <h4>📝 Written Exam Study Material</h4>
+                    <p>Subject-wise notes and practice questions</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Coaches Section -->
-    <section id="coaches">
+    <section class="coaches">
         <div class="container">
-            <h2>Meet Our Expert Coaches</h2>
-            <div class="coaches-grid">
+            <h2 class="section-title">Our Expert Coaches</h2>
+            <div class="coach-grid">
                 <div class="coach-card">
-                    <h3>Kale Sir</h3>
-                    <p>Senior Coach</p>
-                    <p>Expert in Police & Army Recruitment Training</p>
+                    <h3>👨‍🏫 Kale Sir</h3>
+                    <p>Senior Faculty</p>
+                    <p>Expert in Police Bharti Preparation</p>
                 </div>
                 <div class="coach-card">
-                    <h3>Ajay Rathode Sir</h3>
-                    <p>Physical Training Specialist</p>
-                    <a href="tel:8956655379" class="phone">📞 8956655379</a>
+                    <h3>👨‍🏫 Ajay Rathode Sir</h3>
+                    <p>Physical Training Expert</p>
+                    <p><a href="tel:8956655379">📞 8956655379</a></p>
                 </div>
                 <div class="coach-card">
-                    <h3>Vithal Sir Kendre</h3>
-                    <p>Written Exam Expert</p>
-                    <a href="tel:9405690540" class="phone">📞 9405690540</a>
+                    <h3>👨‍🏫 Vithal Sir Kendre</h3>
+                    <p>Written Exam Specialist</p>
+                    <p><a href="tel:9405690540">📞 9405690540</a></p>
                 </div>
                 <div class="coach-card">
-                    <h3>Gangadhar Adhav</h3>
-                    <p>Strategy & Guidance Coach</p>
-                    <a href="tel:7972489083" class="phone">📞 7972489083</a>
+                    <h3>👨‍🏫 Gangadhar Adhav</h3>
+                    <p>Senior Mentor</p>
+                    <p><a href="tel:7972489083">📞 7972489083</a></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Location Section -->
-    <section id="location">
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
         <div class="container">
-            <h2>Visit Our Academy</h2>
-            <div class="address-box">
-                <h3>📍 Our Location</h3>
-                <p>
-                    <strong>Josh Academy</strong><br>
-                    Mandal Lal Dingra Ground<br>
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-info">
+                <div class="info-item">
+                    <strong>📍 Address:</strong>
+                    <p>Mandal Lal Dingra Ground<br>
                     Pradhikaran, Nigdi<br>
-                    Pune, Maharashtra
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Media Section -->
-    <section id="contact" class="social-section">
-        <div class="container">
-            <h2>Connect With Us</h2>
-            <div class="social-links">
-                <div class="social-link">
-                    <a href="https://www.instagram.com/joshacademy" target="_blank">
-                        📸 Instagram
-                    </a>
-                    <p>@josh_academy</p>
+                    Pune, Maharashtra</p>
                 </div>
-                <div class="social-link">
-                    <a href="https://www.youtube.com/@joshacademy" target="_blank">
-                        ▶️ YouTube
-                    </a>
-                    <p>Josh Academy</p>
+                
+                <div class="info-item">
+                    <strong>📞 Contact Numbers:</strong>
+                    <p>
+                        Ajay Rathode Sir: <a href="tel:8956655379">8956655379</a><br>
+                        Vithal Sir Kendre: <a href="tel:9405690540">9405690540</a><br>
+                        Gangadhar Adhav: <a href="tel:7972489083">7972489083</a>
+                    </p>
+                </div>
+
+                <div class="info-item">
+                    <strong>🌐 Connect With Us:</strong>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/joshaccademy" target="_blank" class="social-link">
+                            📸 Instagram: @joshaccademy
+                        </a>
+                        <a href="https://www.youtube.com/@joshaccadamy" target="_blank" class="social-link">
+                            🎥 YouTube: joshaccadamy
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -482,9 +442,10 @@
 
     <!-- Footer -->
     <footer>
-        <p><strong>Josh Academy</strong> - Police, Army & Vanrakshak Bharti Training Center</p>
-        <p>Mandal Lal Dingra Ground, Pradhikaran, Nigdi, Pune</p>
-        <p>&copy; 2024 Josh Academy. All Rights Reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 Josh Academy. All Rights Reserved.</p>
+            <p>Building Future Police Officers & Army Personnel</p>
+        </div>
     </footer>
 </body>
 </html>
